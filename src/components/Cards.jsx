@@ -41,7 +41,7 @@ export function Cards(props) {
 
 const mapStateToProps = (state) => {
   return {
-  cities: state
+  cities: state.data
   }
 }
 

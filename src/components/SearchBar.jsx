@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {} from '@fortawesome/fontawesome-svg-core'
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons"
 import { connect } from "react-redux";
-import { addCity } from "../actions";
+import { fetchCity } from "../actions";
 import { useNavigate } from "react-router-dom";
 
 export function SearchBar(props) {
@@ -56,7 +56,7 @@ export function SearchBar(props) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchCity: (city, id) => dispatch(addCity(city, id))
+    searchCity: (city, id) => dispatch(fetchCity(city, id))
   }
 }
 

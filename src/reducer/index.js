@@ -1,24 +1,43 @@
-import {ADD_CITY, REMOVE_CITY, GET_CITY} from '../actions';
+import {ADD_CITY, REMOVE_CITY, GET_CITY, GET_CITY_SUCCESS, GET_CITY_FAILURE} from '../actions';
 
-const initialState = [];
+const initialState = { 
+                       data: [],
+                       isFetching: false,
+                       error: false,
+                       errMsg: ''
+                     }
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
-        case ADD_CITY:
-            return [
-                ...state,
-                action.city
-            ]
 
         case GET_CITY:
-            return (
-                state.filter(cities => cities.id === action.id)
-                )
+            return {
+                ...state,
+                isFetching: true
+            }
+
+        case GET_CITY_SUCCESS:
+            return {
+                ...state,
+                data: [
+                    ...state.data,
+                    action.city
+                ],
+                isFetching: false
+            }
+
+        case GET_CITY_FAILURE:
+            return {
+                ...state,
+                isFetching: false,
+                error: true
+            }
 
         case REMOVE_CITY:
-            return (
-                state.filter(oldCities => oldCities.id !== action.id)
-                )
+            return {
+                ...state,
+                data: state.filter(oldCities => oldCities.id !== action.id)
+            }
 
         default: return state;
     }

@@ -1,4 +1,4 @@
-export const fetchCity = (cityName, id) => {
+export const fetchCityAPI = (cityName, id) => {
     return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=d163345ee8814c0ee3025942e6b63ce2`)
         .then(r => r.json())
         .then((res) => {
