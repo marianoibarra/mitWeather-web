@@ -29,7 +29,6 @@ export default function Microcard(props) {
     const timezone = props.timezone/3600
     date.setHours(date.getHours() + timezone)
     const style = date.getHours() >= 21 ? s.last : undefined;
-    console.log(date.getDate())
     var micro = 
         <div id={s.container} className={style}>
             <div className={s.hour}>

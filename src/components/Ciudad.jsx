@@ -1,9 +1,10 @@
 import React from "react";
 import s from "./Ciudad.module.css"
 import Microcard from "./Microcard";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
-import { Spinner } from "react-bootstrap";
+import { useEffect } from "react";
+import DocumentTitle from "react-document-title";
 
 const icons = {
     "01d": "https://i.imgur.com/Cedswx5.png",
@@ -52,13 +53,25 @@ const styles = {
 }
 
 export function Ciudad(props) {
-    
-    // if(city.length) {
-    //     var city = city[0];
+
+    let navigate = useNavigate()
     let { id } = useParams();    
     let city = props.cities.find(city => city.id == id)
+    console.log(props.cities);
+
+    useEffect(() => {
+    if(city == undefined) {
+        if(props.cities.length > 0) {
+            navigate(`/ciudad/${props.cities[0].id}`)
+        } else {
+            navigate('/')
+        }
+    }},[])
+
+
     if(city != undefined) {
         return (
+            <DocumentTitle title={`mitWeather - ${city.name}`}>
             <div style={styles[city.img]} className={s.body}>
                 <div className={s.tempContainer}>
                     <div className={s.ciudad}>
@@ -72,25 +85,32 @@ export function Ciudad(props) {
                         <img className={s.img} src={icons[city.img]} />
                     </div>
                 </div>
-                <div className={s.extContainer}>
-                    <div className={s.extScrolleable}>
-                    {
-                        city.ext.map(e => <Microcard timezone={city.timezone} city={e} />)
-                    }
+                <div>
+                    {/* <h4>Extended - 3 hours steps</h4> */}
+                    <div className={s.extContainer}>
+                        <div className={s.extScrolleable}>
+                        {
+                            city.ext.map(e => <Microcard timezone={city.timezone} city={e} />)
+                        }
+                        </div>
                     </div>
                 </div>
             </div>
+            </DocumentTitle>
         )
     } else {
         return (
-            <div className={s.spinner}><Spinner animation="border" /></div>
+            //rediccionar a home u otra city
+            <div>
+            </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-    cities: state.data
+    cities: state.data,
+    isFetching: state.isFetching
     }
 }
 

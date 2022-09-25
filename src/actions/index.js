@@ -31,7 +31,7 @@ export const fetchCity = (payload, id) => {
             .then(city => {
                 dispatch(getCitySuccess(city))
             })
-            .catch((err) => {console.log(err); getCityFailure()})
+            .catch((err) => {dispatch(getCityFailure())})
 
     }
 }

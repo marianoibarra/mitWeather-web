@@ -19,17 +19,17 @@ export function Cards(props) {
           </div>
         </div>
         <SearchBar />
-        {props.cities.map((c) => (
-            <Card
-              key={c.id}
-              max={c.max}
-              min={c.min}
-              curr={c.temp}
-              name={c.name}
-              img={c.img}
-              id={c.id}
-            />
-        ))}
+          {props.cities.map((c) => (
+              <Card
+                key={c.id}
+                max={c.max}
+                min={c.min}
+                curr={c.temp}
+                name={c.name}
+                img={c.img}
+                id={c.id}
+              />
+          ))}
       </div>
       <Outlet />
       </>

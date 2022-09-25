@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import {} from '@fortawesome/fontawesome-svg-core'
 import {faXmark, faCircleXmark} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useParams, useNavigate} from 'react-router-dom';
 
 export function Card(props) {
   const styles = {
@@ -31,7 +32,21 @@ export function Card(props) {
     "13n": {},
     "50d": {},
     "50n": {}
-}
+  }
+
+  const navigate = useNavigate();
+  const goHome = () => navigate('/')
+  const goToCity = (id) => navigate(`/ciudad/${id}`)
+  const { id } = useParams();
+
+  const redirect = () => {
+    if(props.cities.length <= 1) goHome();
+    else if(props.id == id) {
+      let r = props.cities.findIndex(city => city.id == id) - 1
+      r = r < 0 ? 0 : r;
+      goToCity(r)
+    }
+  }
 
   var card = 
     <div className={s.contenedor} style={styles[props.img]}>
@@ -42,11 +57,17 @@ export function Card(props) {
       </NavLink>
       <div className={s.tempOrButton}>
         <div className={s.temp}>{props.curr + "°"}</div>
-        <button onClick={() => props.removeCity(props.id)} className={s.boton}><FontAwesomeIcon icon={faXmark}/></button>
+        <button onClick={() => {redirect(); props.removeCity(props.id)}} className={s.boton}><FontAwesomeIcon icon={faXmark}/></button>
       </div>
     </div>;
     return card
 };
+
+const mapStateToProps = (state) => {
+  return {
+    cities: state.data
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -54,4 +75,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Card)
+export default connect(mapStateToProps, mapDispatchToProps)(Card)

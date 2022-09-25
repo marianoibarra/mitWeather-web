@@ -4,7 +4,7 @@ const initialState = {
                        data: [],
                        isFetching: false,
                        error: false,
-                       errMsg: ''
+                       errMsg: 'err'
                      }
 
 export default function rootReducer(state = initialState, action) {
@@ -13,7 +13,8 @@ export default function rootReducer(state = initialState, action) {
         case GET_CITY:
             return {
                 ...state,
-                isFetching: true
+                isFetching: true,
+                error: false
             }
 
         case GET_CITY_SUCCESS:
@@ -30,13 +31,14 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 isFetching: false,
-                error: true
+                error: true,
+                errMsg: 'Wrong city, please try again'
             }
 
         case REMOVE_CITY:
             return {
                 ...state,
-                data: state.filter(oldCities => oldCities.id !== action.id)
+                data: state.data.filter(oldCities => oldCities.id !== action.id)
             }
 
         default: return state;

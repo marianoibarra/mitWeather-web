@@ -20,7 +20,9 @@
     padding-left: 16px;
     line-height: 48px;
     text-align: left;
-    width: 72%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .contenedor img {

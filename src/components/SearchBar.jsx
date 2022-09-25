@@ -6,12 +6,18 @@ import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons"
 import { connect } from "react-redux";
 import { fetchCity } from "../actions";
 import { useNavigate } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 export function SearchBar(props) {
   var [city, setCity] = useState("");
   var [id, setId] = useState(0);
+  var [lastLength, setLastLength] = useState(0);
   let [focus, setFocus] = useState(false); 
+  let [placeholder, setPlaceholder] = useState('Enter location')
+  let [disabled, setDisabled] = useState(false)
   const searchCont = useRef();
+  const errorCont = useRef();
+  const spinner = useRef();
   const navigate = useNavigate();
   const goToCity = (id) => navigate(`/ciudad/${id}`)
 
@@ -22,6 +28,45 @@ export function SearchBar(props) {
       searchCont.current.className = `${s.unfocus}`
     }
   })
+
+  useEffect(() => {
+    if(props.error) {
+      errorCont.current.className = `${s.errCont}`
+    } else {
+      errorCont.current.className = `${s.errContHidden}`
+    }
+  }, [props.error])
+
+  useEffect(() => {
+    if(focus) {
+      searchCont.current.className = `${s.focus}`
+    } else {
+      searchCont.current.className = `${s.unfocus}`
+    }
+  })
+
+  useEffect(() => {
+    if(props.isFetching) {
+      spinner.current.className = `${s.spinner}`
+      setPlaceholder('Searching..')
+      setDisabled(true)
+    } else {
+      spinner.current.className = `${s.spinnerHidden}`
+      setPlaceholder('Enter location')
+      setDisabled(false)
+    }
+  }, [props.isFetching])
+
+
+
+  useEffect(() =>
+    { 
+      if(props.cities.length > lastLength){
+        goToCity(id);
+        setId(id + 1);
+      }
+      setLastLength(props.cities.length)
+    }, [props.cities.length])
   
   return (
     <form className={s.form} onSubmit={(e) => {
@@ -29,29 +74,42 @@ export function SearchBar(props) {
       props.searchCity(city, id)
       let i = document.getElementById('inputCity');
       i.value = '';
-      setCity('')
-      goToCity(id);
-      setId(id + 1);      
+      setCity('')    
     }}>
-
-      <div id={s.searchCont} className={s.unfocus} ref={searchCont}>
+        <div id={s.searchCont} className={s.unfocus} ref={searchCont}>
         <button className={s.searchButton} type="submit">
           <FontAwesomeIcon className={s.searchIcon} icon={faMagnifyingGlass} />
         </button>
         <input
-          autocomplete="off"
+          autocomplete="nope"
           id="inputCity"
           className={s.searchInput}
           type="text"
-          placeholder="Enter location"
+          placeholder={placeholder}
           value={city}
+          disabled={disabled}
           onChange={e => setCity(e.target.value)}
           onFocus={e => setFocus(true)}
           onBlur={e => setFocus(false)}
         />
+          <div ref={spinner} className={s.spinner}>
+            <Spinner size="sm" animation="border" variant="light"/>
+          </div>
       </div>
+      <div ref={errorCont} className={s.errCont}>
+        <span className={s.errSpan}>{props.errMsg}</span>
+        </div>
     </form>
   );
+}
+
+const mapStateToProps = (state) => {
+  return {
+    isFetching: state.isFetching,
+    error: state.error,
+    errMsg: state.errMsg,
+    cities: state.data
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -60,4 +118,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
