@@ -1,0 +1,94 @@
+.body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#65a9cb,#1f8dbb);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all .6s ease-in-out;
+}
+
+.ciudad {
+    color: white;
+    text-align: left;
+}
+
+.city {
+    font-size: 2.2rem;
+    font-weight: 300;
+    
+    padding-left: 12px;
+}
+.weather {
+    font-size: 1.7rem;
+    font-weight: 300;
+    padding-left: 12px;
+ 
+}
+
+.weather::first-letter {
+    text-transform: uppercase;
+}
+
+.temp {
+    font-size: 10rem;
+    font-weight: 300;
+    line-height: 10rem;
+    margin: 24px 0;
+}
+
+.tempContainer {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    } 
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+.img {
+    width: 300px;
+    animation: move 7s ease-in-out infinite;
+}
+
+.extContainer {
+    margin-left: calc(12.5% + 300px);
+    width: calc(75% - 300px);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 12px 8px;
+}
+
+.extScrolleable {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+    padding: 12px 8px;
+}
+
+.extScrolleable:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.extScrolleable:hover::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.extScrolleable:hover::-webkit-scrollbar-thumb:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 7px;
+}
