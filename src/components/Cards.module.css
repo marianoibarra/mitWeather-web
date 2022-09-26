@@ -1,4 +1,6 @@
 .nav {
+  z-index: 1;
+  backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -100,7 +102,7 @@
   .logoimg {
     margin-right: 16px;
   }
-  
+
   .logoCont {
     width: fit-content;
   }
