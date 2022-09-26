@@ -89,7 +89,7 @@
     font-weight: 400;
     border-top: 1px solid rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-    border-right: 1px solid whitrgba(255, 255, 255, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.8);
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
 }
