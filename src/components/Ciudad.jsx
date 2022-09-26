@@ -1,10 +1,10 @@
 import React from "react";
 import s from "./Ciudad.module.css"
-import Microcard from "./Microcard";
 import { useParams, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import DocumentTitle from "react-document-title";
+import ExtCard from "./ExtCard";
 
 const icons = {
     "01d": "https://i.imgur.com/Cedswx5.png",
@@ -73,13 +73,11 @@ export function Ciudad(props) {
         return (
             <DocumentTitle title={`mitWeather - ${city.name}`}>
             <div style={styles[city.img]} className={s.body}>
-                <div className={s.tempContainer}>
-                    <div className={s.ciudad}>
-                            <div className="container">
-                                <div className={s.city}>{city.name}</div>
-                                <div className={s.temp}>{city.temp}º</div>
-                                <div className={s.weather}>{city.weather}</div>
-                        </div>
+                <div className={s.tempAndIcon}>
+                    <div className={s.tempCont}>
+                        <div className={s.city}>{city.name}</div>
+                        <div className={s.temp}>{city.temp}º</div>
+                        <div className={s.weather}>{city.weather}</div>
                     </div>
                     <div className={s.imgCont}>
                         <img className={s.img} src={icons[city.img]} />
@@ -90,7 +88,7 @@ export function Ciudad(props) {
                     <div className={s.extContainer}>
                         <div className={s.extScrolleable}>
                         {
-                            city.ext.map(e => <Microcard timezone={city.timezone} city={e} />)
+                            city.ext.map(e => <ExtCard timezone={city.timezone} city={e} />)
                         }
                         </div>
                     </div>

@@ -1,0 +1,22 @@
+.logoCont {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  
+  }
+  
+  .logoimg img {
+    width: 56px;
+  }
+  
+  .logotext {
+    margin: 0 6px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: .5px;
+    color: #ffffffc2;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
+  }

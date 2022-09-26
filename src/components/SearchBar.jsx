@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef} from "react";
 import s from './SearchBar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {} from '@fortawesome/fontawesome-svg-core'
-import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons"
+import {faMagnifyingGlass, faCircleExclamation} from "@fortawesome/free-solid-svg-icons"
 import { connect } from "react-redux";
 import { fetchCity } from "../actions";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +17,7 @@ export function SearchBar(props) {
   let [disabled, setDisabled] = useState(false)
   const searchCont = useRef();
   const errorCont = useRef();
+  const errIcon = useRef();
   const spinner = useRef();
   const navigate = useNavigate();
   const goToCity = (id) => navigate(`/ciudad/${id}`)
@@ -31,9 +32,13 @@ export function SearchBar(props) {
 
   useEffect(() => {
     if(props.error) {
-      errorCont.current.className = `${s.errCont}`
+      // errorCont.current.className = `${s.errCont}`
+      setPlaceholder(props.errMsg)
+      errIcon.current.className = `${s.errIcon}`
     } else {
-      errorCont.current.className = `${s.errContHidden}`
+      // errorCont.current.className = `${s.errContHidden}`
+      setPlaceholder('Enter location')
+      errIcon.current.className = `${s.hidden}`
     }
   }, [props.error])
 
@@ -51,8 +56,8 @@ export function SearchBar(props) {
       setPlaceholder('Searching..')
       setDisabled(true)
     } else {
-      spinner.current.className = `${s.spinnerHidden}`
-      setPlaceholder('Enter location')
+      spinner.current.className = `${s.hidden}`
+      if(!props.error) setPlaceholder('Enter location')
       setDisabled(false)
     }
   }, [props.isFetching])
@@ -88,17 +93,22 @@ export function SearchBar(props) {
           placeholder={placeholder}
           value={city}
           disabled={disabled}
-          onChange={e => setCity(e.target.value)}
+          onChange={e => {setCity(e.target.value); errIcon.current.className = `${s.hidden}`}}
           onFocus={e => setFocus(true)}
           onBlur={e => setFocus(false)}
         />
+        <div className={s.iconBox}>
           <div ref={spinner} className={s.spinner}>
             <Spinner size="sm" animation="border" variant="light"/>
           </div>
-      </div>
-      <div ref={errorCont} className={s.errCont}>
-        <span className={s.errSpan}>{props.errMsg}</span>
+          <div ref={errIcon} className={s.errIcon}>
+            <FontAwesomeIcon icon={faCircleExclamation}/>
+          </div>
         </div>
+      </div>
+      {/* <div ref={errorCont} className={s.errCont}>
+        <span className={s.errSpan}>{props.errMsg}</span>
+        </div> */}
     </form>
   );
 }

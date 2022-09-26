@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="App">
         <Routes>
-          <Route path='/'  element={<Home />}/>
+          <Route path='/' index element={<Home />}/>
           <Route path='/ciudad' element={<Cards />}>
             <Route path=':id' element={<Ciudad />}/>
           </Route>

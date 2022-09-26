@@ -1,26 +1,31 @@
 import React from "react";
 import s from "./Cards.module.css";
-import Card from "./Card.jsx";
-import SearchBar from "./SearchBar";
+import NavCard from "./NavCard.jsx";
 import { connect } from "react-redux";
 import { Outlet } from "react-router-dom";
+import NavFirstBlock from "./Nav-FirstBlock";
+import SearchBar from "./SearchBar";
 
 export function Cards(props) {
   if (props.cities) {
     return (
       <>
-      <div className={s.cards}>
-        <div className={s.logo}>
-          <div className={s.logoimg}>
-            <img src="https://i.imgur.com/0CiolPe.png"/>
+      <div className={s.nav}>
+        <div className={s.navFirstBlock}>
+          <div className={s.logoCont}>
+            <div className={s.logoimg}>
+              <img src="https://i.imgur.com/0CiolPe.png"/>
+            </div>
+            <div className={s.logotext}>
+              mitWeather
+            </div>
           </div>
-          <div className={s.logotext}>
-            mitWeather
-          </div>
+          <SearchBar />
         </div>
-        <SearchBar />
+        <div className={s.navSecondBlock}>
           {props.cities.map((c) => (
-              <Card
+              <div className={s.card}>
+              <NavCard
                 key={c.id}
                 max={c.max}
                 min={c.min}
@@ -29,7 +34,9 @@ export function Cards(props) {
                 img={c.img}
                 id={c.id}
               />
+              </div>
           ))}
+        </div>
       </div>
       <Outlet />
       </>

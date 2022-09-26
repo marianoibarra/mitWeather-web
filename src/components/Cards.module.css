@@ -1,25 +1,23 @@
-.cards {
-  backdrop-filter: blur(28px);
-  padding-top: 24px;
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   position: fixed;
   width: 300px;
   height: 100vh;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
+  padding-top: 24px;
   gap: 8px;  
   background-color: rgba(255, 255, 255, 0.17);
-  backdrop-filter: blur(24px);
 }
 
-.logo {
+.logoCont {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
+  margin-bottom: 24px;
 }
 
 .logoimg img {
@@ -33,4 +31,62 @@
   letter-spacing: .5px;
   color: #ffffffc2;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
+}
+
+.navFirstBlock {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.navSecondBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 90%;
+}
+
+.card {
+  height: 48px;
+}
+@media screen and (max-width: 800px) {
+  .nav {
+    padding: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .navFirstBlock {
+    height: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  .navSecondBlock {
+
+    width: 100%;
+    flex-direction: row;
+    padding: 4px 12px;
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+
+  }
+  
+  .card {
+    min-width: 120px;
+    flex-shrink: 0;
+    width: auto;
+    height: 36px;
+  }
+
+  .logoCont {
+    margin: 0;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }

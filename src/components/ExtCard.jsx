@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Microcard.module.css'
+import s from './ExtCard.module.css'
 
 const icons = {
     "01d": "https://i.imgur.com/Cedswx5.png",
@@ -24,7 +24,7 @@ const icons = {
 
 
 
-export default function Microcard(props) {
+export default function ExtCard(props) {
     const date = new Date(props.city.dt_txt)
     const timezone = props.timezone/3600
     date.setHours(date.getHours() + timezone)

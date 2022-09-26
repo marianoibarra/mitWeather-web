@@ -8,6 +8,7 @@ body {
 .homeBody {
     background-color: blueviolet;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0;
@@ -17,6 +18,31 @@ body {
 }
 
 .searchCont {
+    max-width: 640px;
     width: 50%;
+    margin-top: 20px;
+    margin-bottom: 100px;
 }
 
+.searchCont form {
+    margin: auto;
+}
+
+.logotext {
+    margin-right: 24px;
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo img {
+    width: 170px;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.15));
+}

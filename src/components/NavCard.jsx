@@ -1,14 +1,15 @@
 import React from 'react';
-import s from "./Card.module.css"
+import s from "./NavCard.module.css"
 import { NavLink } from 'react-router-dom';
 import { removeCity } from '../actions';
 import { connect } from 'react-redux';
 import {} from '@fortawesome/fontawesome-svg-core'
-import {faXmark, faCircleXmark} from '@fortawesome/free-solid-svg-icons'
+import {faXmark} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useParams, useNavigate} from 'react-router-dom';
 
-export function Card(props) {
+
+export function NavCard(props) {
   const styles = {
     "01d": {},
     "01n": {
@@ -75,4 +76,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Card)
+export default connect(mapStateToProps, mapDispatchToProps)(NavCard)
