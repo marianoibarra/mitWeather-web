@@ -75,6 +75,8 @@ export function SearchBar(props) {
   
   return (
     <form className={s.form} onSubmit={(e) => {
+      autofill="nope"
+      autocomplete="nope"
       e.preventDefault();
       props.searchCity(city, id)
       let i = document.getElementById('inputCity');
@@ -86,11 +88,11 @@ export function SearchBar(props) {
           <FontAwesomeIcon className={s.searchIcon} icon={faMagnifyingGlass} />
         </button>
         <input
-          autofill="off"
+          autofill="nope"
           autocomplete="nope"
           id="inputCity"
           className={s.searchInput}
-          type="text"
+          type="search"
           placeholder={placeholder}
           value={city}
           disabled={disabled}
