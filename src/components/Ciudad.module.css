@@ -97,24 +97,24 @@
     height: 7px;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1120px) {
     .img {
-        width: 185px;
+        width: 225px;
     }
     
     .city {
-        font-size: 1.5rem;
-        line-height: 1.6rem;
+        font-size: 1.7rem;
+        line-height: 2.25rem;
     }
 
     .temp {
-        font-size: 6.5rem;
-        line-height: 8rem;
+        font-size: 7.5rem;
+        line-height: 7.5rem;
     }
 
     .weather {
-        font-size: 1.1rem;
-        line-height: 1.1rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
     }
 }
 
@@ -137,24 +137,27 @@
 
 }
 
-
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 540px) {
     .img {
-        width: 225px;
+        width: 185px;
     }
     
     .city {
-        font-size: 1.7rem;
-        line-height: 2.25rem;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
     }
 
     .temp {
-        font-size: 7.5rem;
+        font-size: 5.5rem;
         line-height: 7.5rem;
     }
 
     .weather {
-        font-size: 1.2rem;
-        line-height: 1.2rem;
+        font-size: 1rem;
+        line-height: 1.1rem;
+    }
+
+    .extScrolleable {
+        padding: 4px;
     }
 }

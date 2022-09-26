@@ -51,6 +51,7 @@
 .card {
   height: 48px;
 }
+
 @media screen and (max-width: 800px) {
   .nav {
     padding: 0;
@@ -70,7 +71,7 @@
 
     width: 100%;
     flex-direction: row;
-    padding: 4px 12px;
+    padding: 0px 12px 8px;
     display: flex;
     flex-direction: row;
     overflow-y: auto;
@@ -89,4 +90,19 @@
     align-items: center;
     justify-content: flex-start;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .logotext {
+    display: none;
+  }
+
+  .logoimg {
+    margin-right: 16px;
+  }
+  
+  .logoCont {
+    width: fit-content;
+  }
+
 }

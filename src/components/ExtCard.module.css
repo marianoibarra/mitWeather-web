@@ -29,3 +29,24 @@ img {
 .weather::first-letter {
     text-transform: uppercase;
 }
+
+
+@media screen and (max-width: 540px) {
+
+    .hour {
+        font-size: 0.8rem;
+    }
+
+    img {
+        width: 48px;
+    }
+    .weather {
+        font-size: 0.7rem;
+        line-height: 0.9rem;
+    }
+    
+    #container {
+        padding: 8px 14px;
+    }
+
+}
