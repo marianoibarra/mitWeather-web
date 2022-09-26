@@ -1,5 +1,5 @@
 .homeBody {
-    background-color: blueviolet;
+    background-image: linear-gradient(to right top, #936bd1, #9167d6, #8f62db, #8d5ee0, #8b59e5, #8857e8, #8455eb, #8053ee, #7953ef, #7253f0, #6a53f1, #6153f2);
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -43,7 +43,7 @@
 }
 
 .boton {
-    z-index: 2;
+    z-index: 10;
     display: none;
     opacity: 80%;
     border-radius: 50%;

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { removeCity } from '../actions';
 import { connect } from 'react-redux';
 import {} from '@fortawesome/fontawesome-svg-core'
-import {faXmark} from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useParams, useNavigate} from 'react-router-dom';
 
@@ -58,7 +58,7 @@ export function NavCard(props) {
       </NavLink>
       <div className={s.tempOrButton}>
         <div className={s.temp}>{props.curr + "°"}</div>
-        <button onClick={() => {redirect(); props.removeCity(props.id)}} className={s.boton}><FontAwesomeIcon icon={faXmark}/></button>
+        <button onClick={() => {redirect(); props.removeCity(props.id)}} className={s.boton}><FontAwesomeIcon icon={ faXmark }/></button>
       </div>
     </div>;
     return card
