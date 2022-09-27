@@ -145,11 +145,6 @@
 }
 
 @media screen and (max-width: 380px) {
-    .tempOrButton {
-        width: auto;
-        padding-right: 8px;
-    }
-
     #card {
         flex-grow: 1;
     }

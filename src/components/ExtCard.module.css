@@ -30,6 +30,9 @@ img {
     text-transform: uppercase;
 }
 
+#container:first-child {
+    margin-left: 12px;
+}
 
 @media screen and (max-width: 540px) {
 
