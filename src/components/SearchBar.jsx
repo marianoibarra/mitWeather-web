@@ -88,6 +88,7 @@ export function SearchBar(props) {
         <button className={s.searchButton} type="submit">
           <FontAwesomeIcon className={s.searchIcon} icon={faMagnifyingGlass} />
         </button>
+        <input type="text" style={display="none"} />
         <input
           autofill="nope"
           autoComplete="nope"
