@@ -61,11 +61,14 @@ export function Ciudad(props) {
         } else {
             navigate('/')
         }
+        
     }},[])
 
     useEffect(() => {
-        let city = props.cities.find(city => city.id == id)
-        if(city.img) window.document.body.style.background = styles[city.img];
+        if(props.cities.find(city => city.id == id)) {
+            let city = props.cities.find(city => city.id == id)
+            window.document.body.style.background = styles[city.img];
+        } 
     })
 
 

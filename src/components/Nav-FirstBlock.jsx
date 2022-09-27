@@ -5,7 +5,7 @@ import SearchBar from './SearchBar'
 export default function NavFirstBlock(props) {
     var navfirst = 
         <>
-            <div className={s.logoCont}>
+          <div className={s.logoCont}>
             <div className={s.logoimg}>
               <img src="https://i.imgur.com/0CiolPe.png"/>
             </div>

@@ -73,11 +73,16 @@ export function NavCard(props) {
   const { id } = useParams();
 
   const redirect = () => {
+    let r, index;
     if(props.cities.length <= 1) goHome();
     else if(props.id == id) {
-      let r = props.cities.findIndex(city => city.id == id) - 1
-      r = r < 0 ? 0 : r;
+      index = props.cities.findIndex(city => city.id == id)
+      if(index < props.cities.length-1) r = props.cities[index+1].id;
+      else r = props.cities[props.cities.length-1].id;
       goToCity(r)
+      // r = props.cities.findIndex(city => city.id == id) - 1
+      // r = r < 0 ? props.cities[0].id : r;
+      // goToCity(r)
     }
   }
 

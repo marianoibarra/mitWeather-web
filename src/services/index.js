@@ -7,6 +7,7 @@ export const fetchCityAPI = (cityName, id) => {
                 max: Math.round(res.main.temp_max) - 273,
                 temp: Math.round(res.main.temp) - 273,
                 img: res.weather[0].icon,
+                apiId: res.id,
                 id: id,
                 name: res.name,
                 weather: res.weather[0].description,

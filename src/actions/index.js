@@ -4,6 +4,7 @@ export const GET_CITY = "GET_CITY"
 export const GET_CITY_SUCCESS = "GET_CITY_SUCCESS"
 export const GET_CITY_FAILURE = "GET_CITY_FAILURE"
 export const REMOVE_CITY = "REMOVE_CITY"
+export const GET_CITY_REPEATED = "GET_CITY_REPEATED"
 
 export const getCity = () => {
     return {
@@ -24,14 +25,27 @@ export const getCityFailure = () => {
     }
 }
 
-export const fetchCity = (payload, id) => {
+export const getCityRepeated = (indexRep) => {
+    return {
+        type: GET_CITY_REPEATED,
+        indexRep: indexRep
+    }
+}
+
+export const fetchCity = (payload, id, currentState) => {
     return (dispatch) => {
+
         dispatch(getCity())
         fetchCityAPI(payload, id)
             .then(city => {
-                dispatch(getCitySuccess(city))
+                let indexRep = currentState.findIndex(currentCity => currentCity.apiId == city.apiId)
+                if(indexRep < 0) {
+                    dispatch(getCitySuccess(city))
+                } else {
+                    dispatch(getCityRepeated(indexRep))
+                }
             })
-            .catch((err) => {dispatch(getCityFailure())})
+            .catch((err) => {console.log(err);dispatch(getCityFailure())})
 
     }
 }

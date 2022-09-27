@@ -1,10 +1,11 @@
-import {ADD_CITY, REMOVE_CITY, GET_CITY, GET_CITY_SUCCESS, GET_CITY_FAILURE} from '../actions';
+import {REMOVE_CITY, GET_CITY, GET_CITY_SUCCESS, GET_CITY_FAILURE, GET_CITY_REPEATED} from '../actions';
 
 const initialState = { 
                        data: [],
                        isFetching: false,
                        error: false,
-                       errMsg: 'err'
+                       errMsg: 'err',
+                       indexRep: false
                      }
 
 export default function rootReducer(state = initialState, action) {
@@ -14,7 +15,8 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 isFetching: true,
-                error: false
+                error: false,
+                indexRep: false
             }
 
         case GET_CITY_SUCCESS:
@@ -33,6 +35,16 @@ export default function rootReducer(state = initialState, action) {
                 isFetching: false,
                 error: true,
                 errMsg: 'Wrong city, please try again'
+            }
+
+        case GET_CITY_REPEATED:
+            return {
+                ...state,
+                isFetching: false,
+                error: true,
+                errMsg: 'This city was already searched',
+                indexRep: action.indexRep
+
             }
 
         case REMOVE_CITY:

@@ -72,16 +72,20 @@ export function SearchBar(props) {
       }
       setLastLength(props.cities.length)
     }, [props.cities.length])
+
+  useEffect(() =>
+    { 
+      if(typeof props.indexRep == 'number') goToCity(props.cities[props.indexRep].id)
+    }, [props.indexRep])
   
   return (
-    
     <HeadShake spy={spyErr}>
       <form 
       autofill="nope"
       autoComplete="nope"
       className={s.form} onSubmit={(e) => {
       e.preventDefault();
-      props.searchCity(city, id)
+      props.searchCity(city, id, props.cities)
       let i = document.getElementById('inputCity');
       i.value = '';
       setCity('')    
@@ -124,13 +128,14 @@ const mapStateToProps = (state) => {
     isFetching: state.isFetching,
     error: state.error,
     errMsg: state.errMsg,
-    cities: state.data
+    cities: state.data,
+    indexRep: state.indexRep
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchCity: (city, id) => dispatch(fetchCity(city, id))
+    searchCity: (city, id, currentState) => dispatch(fetchCity(city, id, currentState))
   }
 }
 
