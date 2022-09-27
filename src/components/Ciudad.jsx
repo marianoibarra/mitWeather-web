@@ -29,7 +29,7 @@ const icons = {
 
 const styles = {
     "01d": {
-        background: 'linear-gradient(#134e8a, #6896c5)'
+        background: 'linear-gradient(#2165a8, #6896c5)'
     },
     "01n": {
         background: 'linear-gradient(#070e21, #2e3844)'
