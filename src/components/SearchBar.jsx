@@ -16,7 +16,6 @@ export function SearchBar(props) {
   let [placeholder, setPlaceholder] = useState('Enter location')
   let [disabled, setDisabled] = useState(false)
   const searchCont = useRef();
-  const errorCont = useRef();
   const errIcon = useRef();
   const spinner = useRef();
   const navigate = useNavigate();
@@ -76,7 +75,7 @@ export function SearchBar(props) {
   return (
     <form 
       autofill="nope"
-      autocomplete="nope"
+      autoComplete="nope"
       className={s.form} onSubmit={(e) => {
       e.preventDefault();
       props.searchCity(city, id)
@@ -91,10 +90,10 @@ export function SearchBar(props) {
         </button>
         <input
           autofill="nope"
-          autocomplete="nope"
+          autoComplete="nope"
           id="inputCity"
           className={s.searchInput}
-          type="search"
+          type="text"
           placeholder={placeholder}
           value={city}
           disabled={disabled}
