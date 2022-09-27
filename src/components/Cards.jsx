@@ -14,6 +14,7 @@ export function Cards(props) {
   const [icon, setIcon] = useState(faMagnifyingGlass)
   const logo = useRef()
   const searchBar = useRef()
+  const navSecondBlock = useRef()
 
   useEffect(() => {
     if(search) {
@@ -27,6 +28,15 @@ export function Cards(props) {
       setIcon(faMagnifyingGlass)
     }
   },[search])
+
+  useEffect(()=> {
+    if(props.cities.length <=1) {
+      navSecondBlock.current.className = s.hiddenOnMobile
+    } else {
+      navSecondBlock.current.className = s.navSecondBlock
+    }
+
+  }, [props.cities])
 
   if (props.cities) {
     return (
@@ -50,7 +60,7 @@ export function Cards(props) {
               <SearchBar />
           </div>
         </div>
-        <div className={s.navSecondBlock}>
+        <div ref={navSecondBlock} className={s.navSecondBlock}>
           {props.cities.map((c) => (
               <div className={s.card}>
               <NavCard
