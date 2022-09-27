@@ -11,6 +11,10 @@
     background: linear-gradient(#65a9cb,#1f8dbb);
 }
 
+.contenedor a {
+    padding: 1px;
+}
+
 #card {
     height: 100%;
     width: 100%;
@@ -65,7 +69,8 @@
 
 .link {
     display: inline;
-    font-weight: 500;
+    font-weight: 400;
+    padding: 0px !important;
     border-top: 1px solid rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255, 0.8);
     border-left: 1px solid rgba(255, 255, 255, 0.8);

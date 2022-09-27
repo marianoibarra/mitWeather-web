@@ -40,7 +40,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: auto;
-    line-height: 100%;
+    line-height: normal;
     padding-left: 30px;
 }
 
