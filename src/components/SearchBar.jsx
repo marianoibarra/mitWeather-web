@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { fetchCity } from "../actions";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
-import HeadShake from 'react-reveal/HeadShake';
+import HeadShake from 'react-reveal/HeadShake'
 
 export function SearchBar(props) {
   let [city, setCity] = useState("");
@@ -16,7 +16,7 @@ export function SearchBar(props) {
   let [focus, setFocus] = useState(false); 
   let [placeholder, setPlaceholder] = useState('Enter location')
   let [disabled, setDisabled] = useState(false)
-  let [spyErr,setSpyErr] = useState(0);
+  let [spyErr, setSpyErr] = useState(0);
   const searchCont = useRef();
   const errIcon = useRef();
   const spinner = useRef();
@@ -33,12 +33,10 @@ export function SearchBar(props) {
 
   useEffect(() => {
     if(props.error) {
-      // errorCont.current.className = `${s.errCont}`
       setPlaceholder(props.errMsg)
       errIcon.current.className = `${s.errIcon}`
-      spyErr++
+      setSpyErr(spyErr + 1)
     } else {
-      // errorCont.current.className = `${s.errContHidden}`
       setPlaceholder('Enter location')
       errIcon.current.className = `${s.hidden}`
     }
@@ -61,7 +59,7 @@ export function SearchBar(props) {
       spinner.current.className = `${s.hidden}`
       if(!props.error) setPlaceholder('Enter location')
       setDisabled(false)
-      if(props.setSearch && !props.error) props.setSearch(false)
+      if(props.setSearch && !props) props.setSearch(false)
 
     }
   }, [props.isFetching])

@@ -12,7 +12,7 @@ import { useParams, useNavigate} from 'react-router-dom';
 export function NavCard(props) {
   const styles = {
     "01d": {
-        background: 'linear-gradient(to top, #2165a8, #6896c5)'
+        background: 'linear-gradient(to top, rgb(33, 101, 168), rgb(83 123 165))'
     },
     "01n": {
         background: 'linear-gradient(to top, #070e21, #2e3844)'
@@ -86,11 +86,11 @@ export function NavCard(props) {
       <NavLink className={({ isActive }) =>
         isActive ? s.link : undefined
         } id={s.card} to={`/ciudad/${props.id}`} >
-        <div className={s.city}>{props.name}</div>
+        <p className={s.city}>{props.name}</p>
       </NavLink>
       <div className={s.tempOrButton}>
         <div className={s.temp}>{props.curr + "°"}</div>
-        <button className={s.closeBtn} onClick={() => {redirect(); props.removeCity(props.id)}}>x</button>
+        <button className={s.closeBtn} onClick={() => {redirect(); props.removeCity(props.id)}}><FontAwesomeIcon icon={faXmark}/></button>
       </div>
     </div>;
     return card

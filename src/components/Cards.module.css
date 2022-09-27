@@ -92,6 +92,7 @@
 
 .card {
   height: 48px;
+  line-height: 46px;
 }
 
 @media screen and (max-width: 1120px) {
@@ -133,10 +134,11 @@
   }
   
   .card {
-    min-width: 120px;
+    min-width: 90px;
     flex-shrink: 0;
     width: auto;
     height: 36px;
+    line-height: 36px;
   }
 
   .logoCont {
