@@ -13,6 +13,10 @@
   background-color: rgba(255, 255, 255, 0.17);
 }
 
+.searchContNav {
+  margin-bottom: 8px;
+}
+
 .searchButtonCont button {
   background: none;
   padding: 0;
@@ -30,6 +34,7 @@
 .visible {
   display: inline;
   flex-grow: 2;
+  margin-left: 8px;
 }
 
 .hidden {
@@ -89,10 +94,21 @@
   height: 48px;
 }
 
+@media screen and (max-width: 1120px) {
+  .nav {
+    width: 250px;
+  }
+}
+
 @media screen and (max-width: 800px) {
+
+  .searchContNav {
+    margin-bottom: 0px;
+  }
+
   .nav {
     padding: 0;
-    width: 100%;
+    width: 100vw;
     height: auto;
   }
 
@@ -138,12 +154,38 @@
   }
 
   .searchButtonCont {
-    margin-right: 16px;
+    margin-right: 6px;
     display: inline;
     color: white;
     font-size: 1.1rem;
     text-shadow: 1px 1px 5px;
 
   }
+
+}
+
+@media screen and (max-width: 380px) {
+
+  .navFirstBlock {
+    height: 48px;
+  }
+
+  .searchButtonCont {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .logoimg img {
+    width: 36px;
+  }
+  
+  .logotext {
+    margin: 0 3px;
+    font-size: 0.95rem;
+    letter-spacing: .3px;
+  }
+
+  
+
 
 }

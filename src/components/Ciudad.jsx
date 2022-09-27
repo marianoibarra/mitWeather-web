@@ -7,81 +7,45 @@ import DocumentTitle from "react-document-title";
 import ExtCard from "./ExtCard";
 
 const icons = {
-    "01d": "https://i.imgur.com/Cedswx5.png",
-    "01n": "https://i.imgur.com/xdwdEgZ.png",
-    "02d": "https://i.imgur.com/0CiolPe.png",
-    "02n": "https://i.imgur.com/07ff4E7.png",
-    "03d": "https://i.imgur.com/I4Zn1K0.png",
-    "03n": "https://i.imgur.com/I4Zn1K0.png",
-    "04d": "https://i.imgur.com/JtQJNDU.png",
-    "04n": "https://i.imgur.com/JtQJNDU.png",
-    "09d": "https://i.imgur.com/O98OqlS.png",
-    "09n": "https://i.imgur.com/O98OqlS.png",
-    "10d": "https://i.imgur.com/0CiolPe.png",
-    "10n": "https://i.imgur.com/07ff4E7.png",
-    "11d": "https://i.imgur.com/8ZzDA5T.png",
-    "11n": "https://i.imgur.com/8ZzDA5T.png",
-    "13d": "https://i.imgur.com/eowdYfb.png",
-    "13n": "https://i.imgur.com/eowdYfb.png",
-    "50d": "https://i.imgur.com/Put4Ig3.png",
-    "50n": "https://i.imgur.com/Put4Ig3.png"
+    "01d": "https://i.imgur.com/ZKBS2fF.png",
+    "01n": "https://i.imgur.com/PFo9Tag.png",
+    "02d": "https://i.imgur.com/BZ3kgOi.png",
+    "02n": "https://i.imgur.com/Q9i90il.png",
+    "03d": "https://i.imgur.com/2SVuvX3.png",
+    "03n": "https://i.imgur.com/2SVuvX3.png",
+    "04d": "https://i.imgur.com/rdrR7lq.png",
+    "04n": "https://i.imgur.com/rdrR7lq.png",
+    "09d": "https://i.imgur.com/6n0n2wf.png",
+    "09n": "https://i.imgur.com/6n0n2wf.png",
+    "10d": "https://i.imgur.com/XYPQ1w4.png",
+    "10n": "https://i.imgur.com/T9igigj.png",
+    "11d": "https://i.imgur.com/llKlagr.png",
+    "11n": "https://i.imgur.com/llKlagr.png",
+    "13d": "https://i.imgur.com/TobmQTg.png",
+    "13n": "https://i.imgur.com/TobmQTg.png",
+    "50d": "https://i.imgur.com/QvffgXO.png",
+    "50n": "https://i.imgur.com/QvffgXO.png"
 }
 
 const styles = {
-    "01d": {
-        background: 'linear-gradient(#2165a8, #6896c5)'
-    },
-    "01n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    },
-    "02d": {
-        background: 'linear-gradient(#187eb2, #65a3c5)'
-    },
-    "02n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    },
-    "03d": {
-        background: 'linear-gradient(#597388, #80a9be)'
-    },
-    "03n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    },
-    "04d": {
-        background: 'linear-gradient(#3f5161, #597585)'
-    },
-    "04n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    },
-    "09d": {
-        background: 'linear-gradient(#3f5161, #597585)'
-    },
-    "09n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    },
-    "10d": {
-        background: 'linear-gradient(#3f5161, #597585)'
-    },
-    "10n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    },
-    "11d": {
-        background: 'linear-gradient(#3f5161, #597585)'
-    },
-    "11n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    },
-    "13d": {
-        background: 'linear-gradient(#3f5161, #597585)'
-    },
-    "13n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    },
-    "50d": {
-        background: 'linear-gradient(#3f5161, #597585)'
-    },
-    "50n": {
-        background: 'linear-gradient(#070e21, #2e3844)'
-    }
+    "01d": 'linear-gradient(#2165a8, #6896c5)',
+    "01n": 'linear-gradient(#070e21, #2e3844)',
+    "02d": 'linear-gradient(#187eb2, #65a3c5)',
+    "02n": 'linear-gradient(#070e21, #2e3844)',
+    "03d": 'linear-gradient(#597388, #80a9be)',
+    "03n": 'linear-gradient(#070e21, #2e3844)',
+    "04d": 'linear-gradient(#3f5161, #597585)',
+    "04n": 'linear-gradient(#070e21, #2e3844)',
+    "09d": 'linear-gradient(#3f5161, #597585)',
+    "09n": 'linear-gradient(#070e21, #2e3844)',
+    "10d": 'linear-gradient(#3f5161, #597585)',
+    "10n": 'linear-gradient(#070e21, #2e3844)',
+    "11d": 'linear-gradient(#3f5161, #597585)',
+    "11n": 'linear-gradient(#070e21, #2e3844)',
+    "13d": 'linear-gradient(#3f5161, #597585)',
+    "13n": 'linear-gradient(#070e21, #2e3844)',
+    "50d": 'linear-gradient(#3f5161, #597585)',
+    "50n": 'linear-gradient(#070e21, #2e3844)',
 }
 
 export function Ciudad(props) {
@@ -89,7 +53,6 @@ export function Ciudad(props) {
     let navigate = useNavigate()
     let { id } = useParams();    
     let city = props.cities.find(city => city.id == id)
-    console.log(props.cities);
 
     useEffect(() => {
     if(city == undefined) {
@@ -100,11 +63,17 @@ export function Ciudad(props) {
         }
     }},[])
 
+    useEffect(() => {
+        let city = props.cities.find(city => city.id == id)
+        if(city.img) window.document.body.style.background = styles[city.img];
+    })
+
 
     if(city != undefined) {
         return (
             <DocumentTitle title={`mitWeather - ${city.name}`}>
-            <div style={styles[city.img]} className={s.body}>
+            {/* <div style={styles[city.img]} className={s.body}> */}
+            <div className={s.body}>
                 <div className={s.tempAndIcon}>
                     <div className={s.tempCont}>
                         <div className={s.city}>{city.name}</div>

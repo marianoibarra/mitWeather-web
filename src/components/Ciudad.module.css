@@ -1,23 +1,19 @@
 .body {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     padding-left: 300px;
-    background: linear-gradient(#65a9cb,#1f8dbb);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
 .city {
-    line-height: 3rem;
     font-size: 2.3rem;
     padding-left: 12px;
 }
 .weather {
-    line-height: 2.3rem;
     font-size: 1.6rem;
     padding-left: 12px;
- 
 }
 
 .weather::first-letter {
@@ -26,7 +22,6 @@
 
 .temp {
     font-size: 10rem;
-    line-height: 10rem;
 }
 
 .tempAndIcon {
@@ -44,8 +39,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 12px;
-    width: 300px;
+    width: auto;
+    line-height: 100%;
+    padding-left: 30px;
 }
 
 @keyframes move {
@@ -63,13 +59,14 @@
 }
 
 .img {
-    width: 300px;
+    width: 250px;
     animation: move 7s ease-in-out infinite;
 }
 
+
 .extContainer {
     margin: auto;
-    width: 75%;
+    width: 80%;
     margin-bottom: 48px;    
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -98,23 +95,49 @@
 }
 
 @media screen and (max-width: 1120px) {
-    .img {
-        width: 225px;
+
+    .body {
+        padding-left: 250px;
+    }
+
+    /* .img {
+        width: 195px;
     }
     
+    .tempCont {
+        padding-left: 20px;
+        
+    }
+
     .city {
         font-size: 1.7rem;
-        line-height: 2.25rem;
+        padding-left: 10px;
     }
 
     .temp {
         font-size: 7.5rem;
-        line-height: 7.5rem;
     }
 
     .weather {
         font-size: 1.2rem;
-        line-height: 1.2rem;
+        padding-left: 10px;
+    } */
+    .img {
+        width: 175px;
+    }
+
+    .city {
+        font-size: 1.55rem;
+        padding-left: 8px;
+    }
+
+    .temp {
+        font-size: 6.5rem;
+    }
+
+    .weather {
+        font-size: 1.1rem;
+        padding-left: 8px;
     }
 }
 
@@ -123,8 +146,66 @@
         padding: 108px 0 0 0;
     }
 
+    /* .img {
+        width: 175px;
+    }
+
+    .city {
+        font-size: 1.55rem;
+        padding-left: 8px;
+    }
+
+    .temp {
+        font-size: 6.5rem;
+    }
+
+    .weather {
+        font-size: 1.1rem;
+        padding-left: 8px;
+    } */
+
+    .img {
+        width: 195px;
+    }
+    
     .tempCont {
-        margin-left: 14px;
+        padding-left: 20px;
+        
+    }
+
+    .city {
+        font-size: 1.7rem;
+        padding-left: 10px;
+    }
+
+    .temp {
+        font-size: 7.5rem;
+    }
+
+    .weather {
+        font-size: 1.2rem;
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .img {
+        width: 175px;
+    }
+
+    .city {
+        font-size: 1.55rem;
+        padding-left: 8px;
+    }
+
+    .temp {
+        font-size: 6.5rem;
+    }
+
+    .weather {
+        font-size: 1.1rem;
+        padding-left: 8px;
     }
 
     .tempAndIcon {
@@ -135,29 +216,54 @@
         width: 90%;
     }
 
+
 }
 
 @media screen and (max-width: 540px) {
     .img {
-        width: 185px;
+        width: 150px;
     }
     
     .city {
         font-size: 1.4rem;
-        line-height: 1.6rem;
+        padding-left: 6px;
     }
 
     .temp {
         font-size: 5.5rem;
-        line-height: 7.5rem;
     }
 
     .weather {
         font-size: 1rem;
-        line-height: 1.1rem;
+        padding-left: 6px;
+    }
+
+    .tempCont {
+        padding-left: 10px;
     }
 
     .extScrolleable {
         padding: 4px;
+    }
+}
+
+
+@media screen and (max-width: 380px) {
+    .img {
+        width: 125px;
+    }
+    
+    .city {
+        font-size: 1rem;
+        padding-left: 6px;
+    }
+
+    .temp {
+        font-size: 4.6rem;
+    }
+
+    .weather {
+        font-size: 0.8rem;
+        padding-left: 6px;
     }
 }

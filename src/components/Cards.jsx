@@ -21,7 +21,6 @@ export function Cards(props) {
       searchBar.current.className = s.visible
       logo.current.className = s.hidden
       setIcon(faArrowLeft)
-      console.log(document.getElementById("inputCity").focus())
     } else {
       logo.current.className = s.logoCont
       searchBar.current.className = s.searchContNav
@@ -57,7 +56,7 @@ export function Cards(props) {
             </button>
          </div>
           <div ref={searchBar} className={s.searchContNav}>
-              <SearchBar />
+              <SearchBar setSearch={setSearch}/>
           </div>
         </div>
         <div ref={navSecondBlock} className={s.navSecondBlock}>

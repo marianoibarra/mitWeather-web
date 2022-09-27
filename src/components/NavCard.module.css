@@ -42,7 +42,7 @@
     margin-right: 4px;
 }
 
-.boton {
+.closeBtn {
     z-index: 10;
     display: none;
     opacity: 80%;
@@ -57,7 +57,7 @@
     margin-right: 4px;
 }
 
-.contenedor:hover .boton {
+.contenedor:hover .closeBtn {
     display: inline;
 }
 
@@ -106,9 +106,30 @@
 
     .city {
         margin-right: 8px;
+        font-size: 0.8rem;
     }
    
     .temp {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .tempOrButton {
+        width: auto;
+        padding-right: 8px;
+    }
+
+    #card {
+        flex-grow: 1;
+    }
+
+    .city {
+        margin-right: 8px;
+        font-size: 0.8rem;
+    }
+   
+    .temp {
+        font-size: 1.1rem;
     }
 }

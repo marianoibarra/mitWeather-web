@@ -90,7 +90,7 @@ export function NavCard(props) {
       </NavLink>
       <div className={s.tempOrButton}>
         <div className={s.temp}>{props.curr + "°"}</div>
-        <button onClick={() => {redirect(); props.removeCity(props.id)}}>x</button>
+        <button className={s.closeBtn} onClick={() => {redirect(); props.removeCity(props.id)}}>x</button>
       </div>
     </div>;
     return card

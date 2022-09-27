@@ -7,14 +7,16 @@ import { connect } from "react-redux";
 import { fetchCity } from "../actions";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
+import HeadShake from 'react-reveal/HeadShake';
 
 export function SearchBar(props) {
-  var [city, setCity] = useState("");
-  var [id, setId] = useState(0);
-  var [lastLength, setLastLength] = useState(0);
+  let [city, setCity] = useState("");
+  let [id, setId] = useState(0);
+  let [lastLength, setLastLength] = useState(0);
   let [focus, setFocus] = useState(false); 
   let [placeholder, setPlaceholder] = useState('Enter location')
   let [disabled, setDisabled] = useState(false)
+  let [spyErr,setSpyErr] = useState(0);
   const searchCont = useRef();
   const errIcon = useRef();
   const spinner = useRef();
@@ -34,6 +36,7 @@ export function SearchBar(props) {
       // errorCont.current.className = `${s.errCont}`
       setPlaceholder(props.errMsg)
       errIcon.current.className = `${s.errIcon}`
+      spyErr++
     } else {
       // errorCont.current.className = `${s.errContHidden}`
       setPlaceholder('Enter location')
@@ -58,10 +61,10 @@ export function SearchBar(props) {
       spinner.current.className = `${s.hidden}`
       if(!props.error) setPlaceholder('Enter location')
       setDisabled(false)
+      if(props.setSearch && !props.error) props.setSearch(false)
+
     }
   }, [props.isFetching])
-
-
 
   useEffect(() =>
     { 
@@ -73,7 +76,9 @@ export function SearchBar(props) {
     }, [props.cities.length])
   
   return (
-    <form 
+    
+    <HeadShake spy={spyErr}>
+      <form 
       autofill="nope"
       autoComplete="nope"
       className={s.form} onSubmit={(e) => {
@@ -84,7 +89,7 @@ export function SearchBar(props) {
       setCity('')    
     }
     }>
-        <div id={s.searchCont} className={s.unfocus} ref={searchCont}>
+      <div id={s.searchCont} className={s.unfocus} ref={searchCont}>
         <button className={s.searchButton} type="submit">
           <FontAwesomeIcon className={s.searchIcon} icon={faMagnifyingGlass} />
         </button>
@@ -111,10 +116,8 @@ export function SearchBar(props) {
           </div>
         </div>
       </div>
-      {/* <div ref={errorCont} className={s.errCont}>
-        <span className={s.errSpan}>{props.errMsg}</span>
-        </div> */}
     </form>
+    </HeadShake>
   );
 }
 
