@@ -11,29 +11,61 @@ import { useParams, useNavigate} from 'react-router-dom';
 
 export function NavCard(props) {
   const styles = {
-    "01d": {},
+    "01d": {
+        background: 'linear-gradient(to top, #134e8a, #6896c5)'
+    },
     "01n": {
-        background: 'linear-gradient(#424240,#1c1e21)'
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
     },
-    "02d": {},
-    "02n": {},
-    "03d": {},
-    "03n": {},
+    "02d": {
+        background: 'linear-gradient(to top, #187eb2, #65a3c5)'
+    },
+    "02n": {
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
+    },
+    "03d": {
+        background: 'linear-gradient(to top, #597388, #80a9be)'
+    },
+    "03n": {
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
+    },
     "04d": {
-        background: 'linear-gradient(#597585,#475d6f)'
+        background: 'linear-gradient(to top, #3f5161, #597585)'
     },
-    "04n": {},
-    "09d": {},
-    "09n": {},
-    "10d": {},
-    "10n": {},
-    "11d": {},
-    "11n": {},
-    "13d": {},
-    "13n": {},
-    "50d": {},
-    "50n": {}
-  }
+    "04n": {
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
+    },
+    "09d": {
+        background: 'linear-gradient(to top, #3f5161, #597585)'
+    },
+    "09n": {
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
+    },
+    "10d": {
+        background: 'linear-gradient(to top, #3f5161, #597585)'
+    },
+    "10n": {
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
+    },
+    "11d": {
+        background: 'linear-gradient(to top, #3f5161, #597585)'
+    },
+    "11n": {
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
+    },
+    "13d": {
+        background: 'linear-gradient(to top, #3f5161, #597585)'
+    },
+    "13n": {
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
+    },
+    "50d": {
+        background: 'linear-gradient(to top, #3f5161, #597585)'
+    },
+    "50n": {
+        background: 'linear-gradient(to top, #070e21, #2e3844)'
+    }
+}
 
   const navigate = useNavigate();
   const goHome = () => navigate('/')
