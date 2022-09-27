@@ -131,7 +131,7 @@
     display: flex;
     flex-direction: row;
     overflow-y: auto;
-    mask-image: linear-gradient(to right, transparent 0%, #000 20px calc(100% - 20px), transparent 100%)
+    mask-image: linear-gradient(to right, transparent -10px, #000 20px calc(100% - 20px), transparent calc(100% + 10px))
   }
   
   .card {
