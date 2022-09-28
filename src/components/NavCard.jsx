@@ -78,7 +78,7 @@ export function NavCard(props) {
     else if(props.id == id) {
       index = props.cities.findIndex(city => city.id == id)
       if(index < props.cities.length-1) r = props.cities[index+1].id;
-      else r = props.cities[props.cities.length-1].id;
+      else r = props.cities[props.cities.length-2].id;
       goToCity(r)
     }
   }
