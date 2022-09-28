@@ -80,9 +80,6 @@ export function NavCard(props) {
       if(index < props.cities.length-1) r = props.cities[index+1].id;
       else r = props.cities[props.cities.length-1].id;
       goToCity(r)
-      // r = props.cities.findIndex(city => city.id == id) - 1
-      // r = r < 0 ? props.cities[0].id : r;
-      // goToCity(r)
     }
   }
 

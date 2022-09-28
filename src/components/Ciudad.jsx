@@ -2,9 +2,11 @@ import React from "react";
 import s from "./Ciudad.module.css"
 import { useParams, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import DocumentTitle from "react-document-title";
 import ExtCard from "./ExtCard";
+import Footer from './Footer'
+import Fade from 'react-reveal/Fade';
 
 const icons = {
     "01d": "https://i.imgur.com/ZKBS2fF.png",
@@ -53,6 +55,8 @@ export function Ciudad(props) {
     let navigate = useNavigate()
     let { id } = useParams();    
     let city = props.cities.find(city => city.id == id)
+    let [test, setTest] = useState(true)
+
 
     useEffect(() => {
     if(city == undefined) {
@@ -61,7 +65,7 @@ export function Ciudad(props) {
         } else {
             navigate('/')
         }
-        
+
     }},[])
 
     useEffect(() => {
@@ -71,33 +75,41 @@ export function Ciudad(props) {
         } 
     })
 
+    useEffect(() => {
+        setTest(true);
+    },[id])
+
+
+
 
     if(city != undefined) {
         return (
             <DocumentTitle title={`mitWeather - ${city.name}`}>
-            {/* <div style={styles[city.img]} className={s.body}> */}
-            <div className={s.body}>
-                <div className={s.tempAndIcon}>
-                    <div className={s.tempCont}>
-                        <div className={s.city}>{city.name}</div>
-                        <div className={s.temp}>{city.temp}º</div>
-                        <div className={s.weather}>{city.weather}</div>
-                    </div>
-                    <div className={s.imgCont}>
-                        <img className={s.img} src={icons[city.img]} />
-                    </div>
-                </div>
-                <div>
-                    {/* <h4>Extended - 3 hours steps</h4> */}
-                    <div className={s.extContainer}>
-                        <div className={s.extScrolleable}>
-                        {
-                            city.ext.map(e => <ExtCard timezone={city.timezone} city={e} />)
-                        }
+                <Fade bottom distance={"10%"} duration={1000} spy={id} cascade appear >
+                    <div className={s.body}>
+                        <div className={s.tempAndIcon}>
+                            <div className={s.tempCont}>
+                                <div className={s.city}>{city.name}</div>
+                                <div className={s.temp}>{city.temp}º</div>
+                                <div className={s.weather}>{city.weather}</div>
+                            </div>
+                            <div className={s.imgCont}>
+                                <img className={s.img} src={icons[city.img]} />
+                            </div>
                         </div>
+                        <div className={s.extContainer}>
+                            <div className={s.extScrolleable}>
+                            {
+                                city.ext.map(e => <ExtCard timezone={city.timezone} city={e} />)
+                            }
+                            </div>
+                        </div>
+                        <div className={s.footer}>
+                            <Footer />
+                        </div>
+
                     </div>
-                </div>
-            </div>
+                </Fade>
             </DocumentTitle>
         )
     } else {

@@ -1,4 +1,16 @@
+@keyframes appear {
+    0% {
+        transform: translateY(-5px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 .contenedor {
+    animation: appear 0.7s ease-in-out;
     color: white;
     width: 100%;
     height: 100%; 

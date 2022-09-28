@@ -7,6 +7,9 @@ import SearchBar from "./SearchBar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {} from '@fortawesome/fontawesome-svg-core'
 import {faMagnifyingGlass, faArrowLeft} from "@fortawesome/free-solid-svg-icons"
+import Footer from "./Footer"
+import Fade from 'react-reveal/Fade';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 export function Cards(props) {
 
@@ -15,6 +18,8 @@ export function Cards(props) {
   const logo = useRef()
   const searchBar = useRef()
   const navSecondBlock = useRef()
+  
+
 
   useEffect(() => {
     if(search) {
@@ -73,6 +78,9 @@ export function Cards(props) {
               />
               </div>
           ))}
+        </div>
+        <div className={s.footer}>
+          <Footer />
         </div>
       </div>
       <Outlet />
