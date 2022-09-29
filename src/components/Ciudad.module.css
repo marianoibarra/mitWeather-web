@@ -4,7 +4,15 @@
     padding-left: 300px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+.weatherCity {
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    height: 100%;
+
 }
 
 .footer {
@@ -132,7 +140,7 @@
     }
 
     .body {
-        padding: 15vh 0 0 0;
+        padding: 90px 0 0 0;
         justify-content: space-between;
     }
 

@@ -87,27 +87,28 @@ export function Ciudad(props) {
             <DocumentTitle title={`mitWeather - ${city.name}`}>
                 <Fade bottom distance={"10%"} duration={1000} spy={id} cascade appear >
                     <div className={s.body}>
-                        <div className={s.tempAndIcon}>
-                            <div className={s.tempCont}>
-                                <div className={s.city}>{city.name}</div>
-                                <div className={s.temp}>{city.temp}º</div>
-                                <div className={s.weather}>{city.weather}</div>
+                        <div className={s.weatherCity}>
+                            <div className={s.tempAndIcon}>
+                                <div className={s.tempCont}>
+                                    <div className={s.city}>{city.name}</div>
+                                    <div className={s.temp}>{city.temp}º</div>
+                                    <div className={s.weather}>{city.weather}</div>
+                                </div>
+                                <div className={s.imgCont}>
+                                    <img className={s.img} src={icons[city.img]} />
+                                </div>
                             </div>
-                            <div className={s.imgCont}>
-                                <img className={s.img} src={icons[city.img]} />
-                            </div>
-                        </div>
-                        <div className={s.extContainer}>
-                            <div className={s.extScrolleable}>
-                            {
-                                city.ext.map(e => <ExtCard timezone={city.timezone} city={e} />)
-                            }
+                            <div className={s.extContainer}>
+                                <div className={s.extScrolleable}>
+                                {
+                                    city.ext.map(e => <ExtCard timezone={city.timezone} city={e} />)
+                                }
+                                </div>
                             </div>
                         </div>
                         <div className={s.footer}>
                             <Footer />
                         </div>
-
                     </div>
                 </Fade>
             </DocumentTitle>

@@ -40,7 +40,7 @@ export function SearchBar(props) {
       setPlaceholder('Enter location')
       errIcon.current.className = `${s.hidden}`
     }
-  }, [props.error])
+  }, [props.error, props.errMsg])
 
   useEffect(() => {
     if(focus) {
@@ -85,6 +85,7 @@ export function SearchBar(props) {
       autoComplete="nope"
       className={s.form} onSubmit={(e) => {
       e.preventDefault();
+      // if(!/^[A-Z\s]+$/i.test(city)) setSpyErr(spyErr + 1)
       props.searchCity(city, id, props.cities)
       let i = document.getElementById('inputCity');
       i.value = '';

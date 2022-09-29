@@ -8,9 +8,9 @@
   position: fixed;
   width: 300px;
   height: 100vh;
-  padding-top: 24px;
-  gap: 16px;  
+  padding-top: 24px; 
   background-color: rgba(255, 255, 255, 0.17);
+  gap: 12px
 }
 
 .footer {
@@ -116,6 +116,7 @@
     padding: 0;
     width: 100vw;
     height: auto;
+    gap: 0px; 
   }
 
   .navFirstBlock {
