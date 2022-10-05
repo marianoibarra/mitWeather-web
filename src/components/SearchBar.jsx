@@ -16,7 +16,7 @@ export function SearchBar(props) {
   let [focus, setFocus] = useState(false); 
   let [placeholder, setPlaceholder] = useState('Enter location')
   let [disabled, setDisabled] = useState(false)
-  let [spyErr, setSpyErr] = useState(0);
+  let [spyErr, setSpyErr] = useState(false);
   const searchCont = useRef();
   const errIcon = useRef();
   const spinner = useRef();
@@ -79,13 +79,12 @@ export function SearchBar(props) {
     }, [props.indexRep])
   
   return (
-    <HeadShake spy={spyErr}>
+    <HeadShake spy={spyErr} when={props.error} onReveal={() => console.log(spyErr, props.error, props.errMsg)}>
       <form 
       autofill="nope"
       autoComplete="nope"
       className={s.form} onSubmit={(e) => {
       e.preventDefault();
-      // if(!/^[A-Z\s]+$/i.test(city)) setSpyErr(spyErr + 1)
       props.searchCity(city, id, props.cities)
       let i = document.getElementById('inputCity');
       i.value = '';

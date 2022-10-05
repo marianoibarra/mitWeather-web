@@ -4,7 +4,7 @@ const initialState = {
                        data: [],
                        isFetching: false,
                        error: false,
-                       errMsg: 'err',
+                       errMsg: null,
                        indexRep: false
                      }
 
@@ -26,7 +26,8 @@ export default function rootReducer(state = initialState, action) {
                     ...state.data,
                     action.city
                 ],
-                isFetching: false
+                isFetching: false,
+                errMsg: null
             }
 
         case GET_CITY_FAILURE:
