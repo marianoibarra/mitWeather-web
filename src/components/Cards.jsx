@@ -25,6 +25,7 @@ export function Cards(props) {
       searchBar.current.className = s.visible
       logo.current.className = s.hidden
       setIcon(faArrowLeft)
+      document.getElementById("inputCity").focus()
     } else {
       logo.current.className = s.logoCont
       searchBar.current.className = s.searchContNav
