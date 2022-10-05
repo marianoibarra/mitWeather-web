@@ -167,11 +167,15 @@
     }
 
     .city {
-        margin-right: 8px;
-        font-size: 0.8rem;
+        margin-right: 0px;
+        font-size: 0.75rem;
     }
    
     .temp {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+
+    .tempOrButton {
+        width: 40px;
     }
 }

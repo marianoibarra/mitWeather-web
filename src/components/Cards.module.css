@@ -114,7 +114,7 @@
   }
 
   .searchContNav {
-    width: 40 0px;
+    width: 400px
   }
 
   .footer {
@@ -150,7 +150,7 @@
   }
   
   .card {
-    min-width: 90px;
+    min-width: 70px;
     flex-shrink: 0;
     width: auto;
     height: 36px;
@@ -183,7 +183,7 @@
 @media screen and (max-width: 380px) {
 
   .navFirstBlock {
-    height: 56px;
+    height: 52px;
   }
 
   .searchButtonCont {
@@ -201,6 +201,10 @@
     letter-spacing: .3px;
   }
 
+  .card {
+    height: 32px;
+    line-height: 32px;
+  }
   
 
 

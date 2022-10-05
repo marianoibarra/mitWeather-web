@@ -110,11 +110,19 @@
     }
 
     #searchCont {
-        padding: 0 4px;
+        padding: 0 5px;
     }
 
     .searchButton {
-        padding: 1px 4px;
+        padding: 1px 5px;
+    }
+
+  }
+
+  @media screen and (max-width: 380px) {
+
+    #searchCont { 
+        height: 36px;
     }
 
   }
