@@ -52,7 +52,7 @@ export const fetchCity = (payload, id, currentState) => {
                         dispatch(getCityRepeated(indexRep))
                     }
                 })
-                .catch((err) => {dispatch(getCityFailure()); console.log(err)})
+                .catch((err) => dispatch(getCityFailure()))
 
     }
 }
