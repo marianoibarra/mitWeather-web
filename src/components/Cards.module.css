@@ -65,7 +65,8 @@
 }
 
 .logoimg img {
-  width: 56px;
+  width: 48px;
+  transform: scale(1.2);
 }
 
 .logotext {
@@ -102,7 +103,7 @@
 
 @media screen and (max-width: 1120px) {
   .nav {
-    width: 250px;
+    width: 260px;
   }
 }
 
@@ -110,6 +111,10 @@
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  .searchContNav {
+    width: 40 0px;
   }
 
   .footer {
@@ -137,7 +142,7 @@
   .navSecondBlock {
     width: 100%;
     flex-direction: row;
-    padding: 0 0 8px 5%;
+    padding: 0 5% 8px;
     display: flex;
     flex-direction: row;
     overflow-x: auto;

@@ -7,27 +7,29 @@ import DocumentTitle from "react-document-title";
 import ExtCard from "./ExtCard";
 import Footer from './Footer'
 import Fade from 'react-reveal/Fade';
+import icons from '../img/index'
 
-const icons = {
-    "01d": "https://i.imgur.com/ZKBS2fF.png",
-    "01n": "https://i.imgur.com/PFo9Tag.png",
-    "02d": "https://i.imgur.com/BZ3kgOi.png",
-    "02n": "https://i.imgur.com/Q9i90il.png",
-    "03d": "https://i.imgur.com/2SVuvX3.png",
-    "03n": "https://i.imgur.com/2SVuvX3.png",
-    "04d": "https://i.imgur.com/rdrR7lq.png",
-    "04n": "https://i.imgur.com/rdrR7lq.png",
-    "09d": "https://i.imgur.com/6n0n2wf.png",
-    "09n": "https://i.imgur.com/6n0n2wf.png",
-    "10d": "https://i.imgur.com/XYPQ1w4.png",
-    "10n": "https://i.imgur.com/T9igigj.png",
-    "11d": "https://i.imgur.com/llKlagr.png",
-    "11n": "https://i.imgur.com/llKlagr.png",
-    "13d": "https://i.imgur.com/TobmQTg.png",
-    "13n": "https://i.imgur.com/TobmQTg.png",
-    "50d": "https://i.imgur.com/QvffgXO.png",
-    "50n": "https://i.imgur.com/QvffgXO.png"
-}
+
+// const icons = {
+//     "01d": "https://i.imgur.com/ZKBS2fF.png",
+//     "01n": "https://i.imgur.com/PFo9Tag.png",
+//     "02d": "https://i.imgur.com/BZ3kgOi.png",
+//     "02n": "https://i.imgur.com/Q9i90il.png",
+//     "03d": "https://i.imgur.com/2SVuvX3.png",
+//     "03n": "https://i.imgur.com/2SVuvX3.png",
+//     "04d": "https://i.imgur.com/rdrR7lq.png",
+//     "04n": "https://i.imgur.com/rdrR7lq.png",
+//     "09d": "https://i.imgur.com/6n0n2wf.png",
+//     "09n": "https://i.imgur.com/6n0n2wf.png",
+//     "10d": "https://i.imgur.com/XYPQ1w4.png",
+//     "10n": "https://i.imgur.com/T9igigj.png",
+//     "11d": "https://i.imgur.com/llKlagr.png",
+//     "11n": "https://i.imgur.com/llKlagr.png",
+//     "13d": "https://i.imgur.com/TobmQTg.png",
+//     "13n": "https://i.imgur.com/TobmQTg.png",
+//     "50d": "https://i.imgur.com/QvffgXO.png",
+//     "50n": "https://i.imgur.com/QvffgXO.png"
+// }
 
 const styles = {
     "01d": 'linear-gradient(#2165a8, #6896c5)',

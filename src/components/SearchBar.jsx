@@ -59,7 +59,7 @@ export function SearchBar(props) {
       spinner.current.className = `${s.hidden}`
       if(!props.error) setPlaceholder('Enter location')
       setDisabled(false)
-      if(props.setSearch && !props) props.setSearch(false)
+      if(props.setSearch && !props.error) props.setSearch(false)
 
     }
   }, [props.isFetching])

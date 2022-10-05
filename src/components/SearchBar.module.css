@@ -27,16 +27,6 @@
     visibility: hidden;
 }
 
-.errSpan {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: red;
-    margin: 4px 0;
-    text-align: left;
-    display: block;
-    padding-left: 36px;
-}
-
 .hidden {
     display: none;
 }
@@ -105,3 +95,26 @@
 .unfocus {
     background-color: inherit
 }
+
+@media screen and (max-width: 1120px) {
+    .searchInput::placeholder {
+        font-size: 0.75rem;
+    }
+
+    .searchInput {
+        font-size: 0.8rem;
+    }
+
+    .errIcon, .searchIcon {
+        font-size: 0.9rem;
+    }
+
+    #searchCont {
+        padding: 0 4px;
+    }
+
+    .searchButton {
+        padding: 1px 4px;
+    }
+
+  }

@@ -8,8 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {} from '@fortawesome/fontawesome-svg-core'
 import {faMagnifyingGlass, faArrowLeft} from "@fortawesome/free-solid-svg-icons"
 import Footer from "./Footer"
-import Fade from 'react-reveal/Fade';
-import TransitionGroup from 'react-transition-group/TransitionGroup';
+import icons from "../img";
 
 export function Cards(props) {
 
@@ -49,7 +48,7 @@ export function Cards(props) {
         <div className={s.navFirstBlock}>
           <div ref={logo} className={s.logoCont}>
             <div className={s.logoimg}>
-              <img src="https://i.imgur.com/0CiolPe.png"/>
+              <img src={icons['02d']}/>
             </div>
             <div className={s.logotext}>
               mitWeather

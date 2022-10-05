@@ -1,28 +1,6 @@
 import React from "react";
 import s from './ExtCard.module.css'
-
-const icons = {
-    "01d": "https://i.imgur.com/Cedswx5.png",
-    "01n": "https://i.imgur.com/xdwdEgZ.png",
-    "02d": "https://i.imgur.com/0CiolPe.png",
-    "02n": "https://i.imgur.com/07ff4E7.png",
-    "03d": "https://i.imgur.com/I4Zn1K0.png",
-    "03n": "https://i.imgur.com/I4Zn1K0.png",
-    "04d": "https://i.imgur.com/JtQJNDU.png",
-    "04n": "https://i.imgur.com/JtQJNDU.png",
-    "09d": "https://i.imgur.com/O98OqlS.png",
-    "09n": "https://i.imgur.com/O98OqlS.png",
-    "10d": "https://i.imgur.com/0CiolPe.png",
-    "10n": "https://i.imgur.com/07ff4E7.png",
-    "11d": "https://i.imgur.com/8ZzDA5T.png",
-    "11n": "https://i.imgur.com/8ZzDA5T.png",
-    "13d": "https://i.imgur.com/eowdYfb.png",
-    "13n": "https://i.imgur.com/eowdYfb.png",
-    "50d": "https://i.imgur.com/Put4Ig3.png",
-    "50n": "https://i.imgur.com/Put4Ig3.png"
-}
-
-
+import icons from "../img";
 
 export default function ExtCard(props) {
     let d = props.city.dt_txt.split(/[- :]/);
