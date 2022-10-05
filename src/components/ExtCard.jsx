@@ -4,10 +4,8 @@ import icons from "../img";
 
 export default function ExtCard(props) {
     let d = props.city.dt_txt.split(/[- :]/);
-    console.log(d)
     let timezone = props.timezone/3600
     let date = new Date(d[0], d[1], d[2], d[3], timezone +d[4], d[5])
-    console.log(date)
     const style = date.getHours() >= 21 ? s.last : undefined;
     var micro = 
         <div id={s.container} className={style}>

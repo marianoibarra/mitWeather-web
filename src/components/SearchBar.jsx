@@ -79,7 +79,7 @@ export function SearchBar(props) {
     }, [props.indexRep])
   
   return (
-    <HeadShake spy={spyErr} when={props.error} onReveal={() => console.log(spyErr, props.error, props.errMsg)}>
+    <HeadShake spy={spyErr} when={props.error}>
       <form 
       autofill="nope"
       autoComplete="nope"
